@@ -4,10 +4,10 @@ import time
 import random
 
 Table=[2,4,7,13,15,16,17,18,19]
-oneDay=8400
+oneDay=86400
 
-commitCommand="git commit -a -m 'a commit to complete the process, randomNum: #' --date '$'"
-pushCommand="git push -f"
+commitCommand="git commit -a -m \"a commit to complete the process, randomNum: #\" --date \"$\""
+pushCommand="git push"
 
 timeZone=time.timezone/60/60*-1
 FinalltimeZone= " + " if timeZone >= 0 else " - "
@@ -20,17 +20,16 @@ def logBuilder():
         log.write("\nThis is a simple edit for **smile Make** :)\n")
 
 def findBeginOfWeek(start=0,now=time.time()):
-    return now - (now-3*oneDay) % (7*oneDay) + start * oneDay + 1 # + 1 is to certainly
+    return now - (now-3*oneDay) % (7*oneDay) + start * oneDay * 7 + 1 # + 1 to certainly
 
 
 def comReg(times,date):
     for i in range(times):
         logBuilder()
-        com=commitCommand.replace("#",random.randint())
+        com=commitCommand.replace("#",str(random.randint(0,1000)))
         com=com.replace("$",date + FinalltimeZone)
         os.system(com)
-
-
+        time.sleep(0.2)
 
 def setTimeTable(startFrom,times):
     base=findBeginOfWeek(startFrom)
@@ -44,13 +43,14 @@ def start():
     startFrom=int(input("Enter the week you want to start the process.\nfor example, -3 means three weeks ago and 0 means the current week: "))
     times=int(input("Enter the number of commits for each day: "))
     while times <= 0:
-        int(input("Please enter a positive number: "))
+        times=int(input("Please enter a positive number: "))
+    print("Just a moment...\n\n")
     setTimeTable(startFrom,times)
     if "y" in input("Do you want to push[y,n]? ").lower():
-        print(os.system(pushCommand))
+        os.system(pushCommand)
     else:
-        print("To push, run the command \"",pushCommand,"\"")
-    input("I wish you always smile :)\nPress Enter to exit...")
+        print("hint: To push, run the command \"",pushCommand,"\"\n")
+    input("I wish you always smile :)\n\nPress Enter to exit...")
 
 start()
     

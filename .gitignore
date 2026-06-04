@@ -1,6 +1,7 @@
 # Byte-compiled / optimized / DLL files
 .gitignore
-idea
+idea.txt
+import os.py
 
 __pycache__/
 *.py[codz]
