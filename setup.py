@@ -15,6 +15,16 @@ FinalltimeZone+= "0" if abs(timeZone) < 9 else ""
 FinalltimeZone+= str(int(abs(timeZone)))
 FinalltimeZone+= "00" if timeZone % 1 == 0 else "30"
 
+def prwhef(st,en="\n",inp=False ,delay=0.03, sleep=0.5): #print (& input ) with effect: delay between chars
+    for i in st:
+        if i == "^":
+            time.sleep(sleep)
+            continue
+        print(i,end="",flush=True)
+        time.sleep(delay)
+    print(en if inp==False else "",end="")
+    return input() if inp==True else ""
+
 def logBuilder():
     with open("log.md", "a") as log:
         log.write("\nThis message makes a simple difference for commit in **smile Make** :)\n")
@@ -39,18 +49,18 @@ def setTimeTable(startFrom,times):
 
 
 def start():
-    print("In the name of Allah")
-    startFrom=int(input("Enter the week you want to start the process.\nfor example, -3 means three weeks ago and 0 means the current week: "))
-    times=int(input("Enter the number of commits for each day: "))
+    prwhef("In the name of Allah")
+    startFrom=int(prwhef("Enter the week you want to start the process;^\nfor example, -3 means three weeks ago^ and 0 means the current week: ",inp=True))
+    times=int(prwhef("Enter the number of commits for each day: ",inp=True))
     while times <= 0:
-        times=int(input("Please enter a positive number: "))
-    print("Just a moment...\n\n")
+        times=int(prwhef("Please enter a positive number: ",inp=True))
+    prwhef("Just a moment...\n\n")
     setTimeTable(startFrom,times)
-    if "y" in input("Do you want to push[y,n]? ").lower():
+    if "y" in prwhef("Do you want to push[y,n]? ",inp=True).lower():
         os.system(pushCommand)
     else:
-        print("hint: To push, run the command \"",pushCommand,"\"\n")
-    input("I wish you always smile :)\n\nPress Enter to exit...")
+        prwhef("hint: To push, run the command \""+pushCommand+"\"\n^")
+    prwhef("I wish you always smile :)^^\n\nPress Enter to exit...",inp=True)
 
 start()
     
