@@ -50,8 +50,13 @@ def setTimeTable(startFrom,times):
 
 
 def start():
-    prwhef("In the name of Allah")
-    startFrom=int(prwhef("Enter the week you want to start the process;^\nfor example, -3 means three weeks ago^ and 0 means the current week: ",inp=True))
+    prwhef("In the name of Allah^")
+    indexs = [1, 6, 8, 10, 14, 16, 18, 22, 25]
+    symbol = "".join("@" if i in indexs else "\n" if (1+i)%4 == 0 else "." for i in range(28))
+    startFrom=int(prwhef("Enter the week you want to start the process;\n\n"+symbol+"""|\n└——> start week
+
+for example, -3 means three weeks ago^ and 0 means the current week: """,inp=True))
+    
     times=int(prwhef("Enter the number of commits for each day: ",inp=True))
     while times <= 0:
         times=int(prwhef("Please enter a positive number: ",inp=True))
