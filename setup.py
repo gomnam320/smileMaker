@@ -16,6 +16,7 @@ FinalltimeZone+= str(int(abs(timeZone)))
 FinalltimeZone+= "00" if timeZone % 1 == 0 else "30"
 
 def prwhef(st,en="\n",inp=False ,delay=0.03, sleep=0.5): #print (& input ) with effect: delay between chars
+    st=str(st)
     for i in st:
         if i == "^":
             time.sleep(sleep)
