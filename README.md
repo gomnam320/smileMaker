@@ -23,7 +23,9 @@ Create a fork, then clone, then run the setup.py.
 
 Consider whether you have ***3 weeks left until the end of the year or entered the first full week of the new year***. If it is less, the smile will not be as visible as it should be and to fix this problem, choose the appropriate weeks that are before or after.
 
-To do this, you can consider each week as a numerical unit and move forward (future) with positive numbers and backward (past) with negative numbers. For example, -1 selects the last week, 0 selects the current week, and 1 selects the next week.
+Also, if there is empty space in your timeline, you can set the start from there.
+
+To do these, you can consider each week as a numerical unit and move forward (future) with positive numbers and backward (past) with negative numbers. For example, -1 selects the last week, 0 selects the current week, and 1 selects the next week.
 
 <img width="1104" height="640" alt="commits" src="https://github.com/user-attachments/assets/8942500f-0058-4bc3-ab8d-90d21921be18" />
 
