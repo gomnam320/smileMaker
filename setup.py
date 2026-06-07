@@ -17,7 +17,7 @@ FinalltimeZone+= "00" if timeZone % 1 == 0 else "30"
 
 def logBuilder():
     with open("log.md", "a") as log:
-        log.write("\nThis is a simple edit for **smile Make** :)\n")
+        log.write("\nThis message makes a simple difference for commit in **smile Make** :)\n")
 
 def findBeginOfWeek(start=0,now=time.time()):
     return now - (now-3*oneDay) % (7*oneDay) + start * oneDay * 7 + 1 # + 1 to certainly
