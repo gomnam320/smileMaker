@@ -62,7 +62,7 @@ for example, -3 means three weeks ago^ and 0 means the current week: """,inp=Tru
         times=int(prwhef("Please enter a positive number: ",inp=True))
     prwhef("Just a moment...\n\n")
     setTimeTable(startFrom,times)
-    if "y" in prwhef("Do you want to push[y,n]? ",inp=True).lower():
+    if "y" == prwhef("Do you want to push[y:Yes,n:No]? ",inp=True).lower()[:1]:
         os.system(pushCommand)
     else:
         prwhef("hint: To push, run the command \""+pushCommand+"\"\n^")
