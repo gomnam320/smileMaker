@@ -1,20 +1,15 @@
 # smileMaker :)
 This is a simple python project ***just for fun***.
 
-
-
 This project register commits of its changes on specific dates,like this:
 
-<img width="158" height="122" alt="smile" src="https://github.com/user-attachments/assets/804fed87-aaca-4f41-bfb1-2f4fd2ecf920" />
+<img width="440" height="457" alt="timeLine" src="https://github.com/user-attachments/assets/02d271b9-412c-4f19-91e8-0f47d85d92a7" />
 
 These commits will appear in your GitHub account timeline as “**:)**”.
 
 If you also made **other commits** during this period,in order to keep the format consistent, you should make the ***same number of commits*** on the specified days so that they appear uniform.
 
 We don't need any external packages here. You just need to have Git installed on your system and have an "ssh key" connected to GitHub (for pushing).
-
-
-
 # How to use?
 
 Create a fork, then clone, then run the setup.py.
